@@ -1,4 +1,4 @@
-3f0d8ff8f299d8bba8e6a35ee1831a68 *DESCRIPTION
+2dbc31379ce2a300443832a58281ca51 *DESCRIPTION
 4b598b10baee8165bba9cdfea9b66d20 *NAMESPACE
 10036fae5734968539dc114a84da347d *R/GetAnswers.R
 3f833f05e4ef28e2dd580e07604a1d99 *R/GetFormStructure.R
@@ -9,7 +9,7 @@ f8914e63db7364bf5833ab432b098d93 *R/GetForms.R
 153418499949ef0e9630969e3b452ced *man/GetAnswers.Rd
 a978d30d7069eab52b4c372917cc3d6f *man/GetFormStructure.Rd
 5f88eea811ce2a8d9164f5bc26e12e9c *man/GetForms.Rd
-29ff2e4dc73c778150d0754b6ef1f289 *man/RColetum-package.Rd
+4469472651c3b4e8fefe8983dc7079e5 *man/RColetum-package.Rd
 a605d6046804698a2257248fdd6b6503 *tests/testthat.R
 87157338c1cb56f32db33ec118f0eaef *tests/testthat/test-GetAnswers.R
 04692ea2f791fd5b68441f287139b96a *tests/testthat/test-GetAnswersComplexForm.R

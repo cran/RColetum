@@ -1,9 +1,11 @@
 Package: RColetum
 Type: Package
 Title: Access your Coletum's Data from API
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("André", "Smaniotto", , "smaniotto@geosapiens.com.br", c("aut", "cre")),
+    person("Marcelo", "Magnani", , "marcelo@geosapiens.com.br", "aut"),
+    person("Rodrigo", "Sant'Ana", , "oc.rodrigosantana@gmail.com", "aut"),
     person("GeoSapiens", role = c("cph", "fnd"))
     )
 Maintainer: André Smaniotto <smaniotto@geosapiens.com.br>
@@ -18,8 +20,10 @@ Imports: httr, jsonlite, dplyr, stats
 RoxygenNote: 6.0.1
 Suggests: testthat
 NeedsCompilation: no
-Packaged: 2018-06-05 17:39:34 UTC; andre
+Packaged: 2018-06-07 12:59:58 UTC; andre
 Author: André Smaniotto [aut, cre],
+  Marcelo Magnani [aut],
+  Rodrigo Sant'Ana [aut],
   GeoSapiens [cph, fnd]
 Repository: CRAN
-Date/Publication: 2018-06-06 11:17:59 UTC
+Date/Publication: 2018-06-07 19:18:00 UTC
