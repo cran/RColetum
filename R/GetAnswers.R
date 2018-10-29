@@ -22,9 +22,22 @@
 #' @param createdBefore Optional filter. This parameter filters the answers
 #' that were answered before this date. Is acceptable in the ISO8601 format
 #' ("YYYY-MM-DD" or "YYYY-MM-DDThh:mm:ssTZD").
+#' @param createdDeviceAfter Optional filter. This parameter filters the answers
+#' that were answered after this date on device time. Is acceptable in the
+#' ISO8601 format ("YYYY-MM-DD" or "YYYY-MM-DDThh:mm:ssTZD").
+#' @param createdDeviceBefore Optional filter. This parameter filters the
+#' answers that were answered before this date on device time. Is acceptable in
+#' the ISO8601 format ("YYYY-MM-DD" or "YYYY-MM-DDThh:mm:ssTZD").
+#' @param updatedAfter Optional filter. This parameter filters the answers that
+#' were updated after this date. Is acceptable in the ISO8601 format
+#' ("YYYY-MM-DD" or "YYYY-MM-DDThh:mm:ssTZD").
+#' @param updatedBefore Optional filter. This parameter filters the answers
+#' that were updated before this date. Is acceptable in the ISO8601 format
+#' ("YYYY-MM-DD" or "YYYY-MM-DDThh:mm:ssTZD").
 #'
 #' @return A list, with one or more data frames.
 #' @examples
+#' \donttest{
 #' GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg", 5705)
 #' GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg", ,"RColetum Test - Iris", TRUE)
 #' GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
@@ -60,6 +73,19 @@
 #'              createdAfter = "2012-12-20T19:20:30Z",
 #'              createdBefore = "2018-12-20T19:20:30Z"
 #'              )
+#' GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+#'              idForm = 5705,
+#'              singleDataFrame = TRUE,
+#'              source = "web_private",
+#'              createdAfter = "2012-12-20T19:20:30Z",
+#'              createdBefore = "2018-12-20T19:20:30Z",
+#'              createdDeviceAfter = "2012-12-20T19:20:30Z",
+#'              createdDeviceBefore = "2018-12-20T19:20:30Z",
+#'              updatedAfter = "2018-05-20T19:20:30Z",
+#'              updatedBefore = "2018-06-20T19:20:30Z"
+#'              )
+#'}
+#'
 #' @export
 
 GetAnswers <- function(token,
@@ -68,7 +94,11 @@ GetAnswers <- function(token,
                        singleDataFrame = FALSE,
                        source = NULL,
                        createdAfter = NULL,
-                       createdBefore = NULL) {
+                       createdBefore = NULL,
+                       createdDeviceAfter = NULL,
+                       createdDeviceBefore = NULL,
+                       updatedAfter = NULL,
+                       updatedBefore = NULL) {
 
     if (missing(idForm)) {
       if (!is.null(nameForm)) {
@@ -95,7 +125,11 @@ GetAnswers <- function(token,
   filters <- NULL
   if (!is.null(source) |
       !is.null(createdBefore) |
-      !is.null(createdAfter)) {
+      !is.null(createdAfter) |
+      !is.null(createdDeviceBefore) |
+      !is.null(createdDeviceAfter) |
+      !is.null(updatedBefore) |
+      !is.null(updatedAfter))  {
 
     filters <- ",filters:{"
     if (!is.null(source)) {
@@ -143,6 +177,69 @@ GetAnswers <- function(token,
       }
     }
 
+    if (!is.null(createdDeviceBefore)) {
+      # Check if the option is valid
+      if (validDate_ISO8601(createdDeviceBefore)) {
+        filters <- paste0(filters,
+                          "createdDeviceBefore:\"",
+                          createdDeviceBefore,
+                          "\",")
+      } else {
+        stop(
+          paste0("The informed date is not in ISO 8601 standard format. The ",
+                 "avaible formats are: 'YYYY-MM-DD' ou ",
+                 "'YYYY-MM-DDThh:mm:ssTZD')"
+          )
+        )
+      }
+    }
+
+    if (!is.null(createdDeviceAfter)) {
+      # Check if the option is valid
+      if (validDate_ISO8601(createdDeviceAfter)) {
+        filters <- paste0(filters,
+                          "createdDeviceAfter:\"",
+                          createdDeviceAfter,
+                          "\",")
+      } else {
+        stop(
+          paste0("The informed date is not in ISO 8601 standard format. The ",
+                 "avaible formats are: 'YYYY-MM-DD' ou ",
+                 "'YYYY-MM-DDThh:mm:ssTZD')"
+          )
+        )
+      }
+    }
+
+    if (!is.null(updatedBefore)) {
+      # Check if the option is valid
+      if (validDate_ISO8601(updatedBefore)) {
+        filters <- paste0(filters, "updatedBefore:\"", updatedBefore, "\",")
+      } else {
+        stop(
+          paste0("The informed date is not in ISO 8601 standard format. The ",
+                 "avaible formats are: 'YYYY-MM-DD' ou ",
+                 "'YYYY-MM-DDThh:mm:ssTZD')"
+          )
+        )
+      }
+    }
+
+    if (!is.null(updatedAfter)) {
+      # Check if the option is valid
+      if (validDate_ISO8601(updatedAfter)) {
+        filters <- paste0(filters, "updatedAfter:\"", updatedAfter, "\",")
+      } else {
+        stop(
+          paste0("The informed date is not in ISO 8601 standard format. The ",
+                 "avaible formats are: 'YYYY-MM-DD' ou ",
+                 "'YYYY-MM-DDThh:mm:ssTZD')"
+          )
+        )
+      }
+    }
+
+
     filters <- paste0(filters, "}")
   }
 
@@ -153,8 +250,10 @@ GetAnswers <- function(token,
         metaData{
             friendlyId,
             userName,
+            userId,
             source,
             createdAt,
+            createdAtDevice,
             createdAtCoordinates
             updatedAt,
             updatedAtCoordinates
@@ -194,8 +293,10 @@ GetAnswers <- function(token,
   reorderNames <- c("friendlyId",
                     reorderNames,
                     "userName",
+                    "userId",
                     "source",
                     "createdAt",
+                    "createdAtDevice",
                     "createdAtCoordinates.latitude",
                     "createdAtCoordinates.longitude",
                     "updatedAt",
@@ -215,6 +316,8 @@ GetAnswers <- function(token,
 
   # Removing ":" (colon) from resp into dates.
   ## This way is possible parse to a date format.
+  resp[[1]]$createdAtDevice <-
+    removeColonDate_ISO8601(resp[[1]]$createdAtDevice)
   resp[[1]]$createdAt <- removeColonDate_ISO8601(resp[[1]]$createdAt)
   resp[[1]]$updatedAt <- removeColonDate_ISO8601(resp[[1]]$updatedAt)
 

@@ -17,12 +17,19 @@ myExpectedAnswersIrisForm <-
          userName =
            c("André Smaniotto", "André Smaniotto", "André Smaniotto",
              "André Smaniotto", "André Smaniotto", "André Smaniotto"),
+         userId = c(8403, 8403, 8403, 8403, 8403, 8403),
          source = c("web_private", "web_private", "web_private", "web_private",
                     "web_private", "web_private"),
          createdAt = c("2018-05-24T20:00:12+0000", "2018-05-24T20:00:39+0000",
                        "2018-05-24T20:01:06+0000", "2018-05-30T14:02:47+0000",
                        "2018-05-30T14:04:30+0000",
                        "2018-05-30T14:05:08+0000"),
+         createdAtDevice = c("2018-05-24T20:00:12+0000",
+                             "2018-05-24T20:00:39+0000",
+                             "2018-05-24T20:01:06+0000",
+                             "2018-05-30T14:02:47+0000",
+                             "2018-05-30T14:04:30+0000",
+                             "2018-05-30T14:05:08+0000"),
          createdAtCoordinates.latitude = c(NA, NA, NA, NA, NA, NA),
          createdAtCoordinates.longitude = c(NA, NA, NA, NA, NA, NA),
          updatedAt = c(NA, NA, "2018-05-24T20:03:04+0000", NA, NA, NA),
@@ -41,12 +48,17 @@ myExpectedAnswersStormFormMultDF <-
              userName =
                c("André Smaniotto", "André Smaniotto", "André Smaniotto",
                  "André Smaniotto"),
+             userId = c(8403, 8403, 8403, 8403),
              source = c("web_private", "web_private", "web_private",
                         "web_private"),
              createdAt = c("2018-05-28T12:16:13+0000",
                            "2018-05-28T12:17:12+0000",
                            "2018-05-28T12:21:29+0000",
                            "2018-05-28T12:25:27+0000"),
+             createdAtDevice = c("2018-05-28T12:16:13+0000",
+                                 "2018-05-28T12:17:12+0000",
+                                 "2018-05-28T12:21:29+0000",
+                                 "2018-05-28T12:25:27+0000"),
              createdAtCoordinates.latitude = c(NA, NA, NA, NA),
              createdAtCoordinates.longitude = c(NA, NA, NA, NA),
              updatedAt = c(NA, NA, NA, NA),
@@ -114,6 +126,8 @@ myExpectedAnswersStormFormSingleDF <-
                              "André Smaniotto", "André Smaniotto",
                              "André Smaniotto", "André Smaniotto",
                              "André Smaniotto", "André Smaniotto"),
+         answer.userId = c(8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403,
+                           8403, 8403, 8403),
          answer.source = c("web_private", "web_private", "web_private",
                            "web_private", "web_private", "web_private",
                            "web_private", "web_private", "web_private",
@@ -130,6 +144,18 @@ myExpectedAnswersStormFormSingleDF <-
                               "2018-05-28T12:25:27+0000",
                               "2018-05-28T12:25:27+0000",
                               "2018-05-28T12:25:27+0000"),
+         answer.createdAtDevice = c("2018-05-28T12:16:13+0000",
+                                    "2018-05-28T12:16:13+0000",
+                                    "2018-05-28T12:16:13+0000",
+                                    "2018-05-28T12:16:13+0000",
+                                    "2018-05-28T12:17:12+0000",
+                                    "2018-05-28T12:21:29+0000",
+                                    "2018-05-28T12:21:29+0000",
+                                    "2018-05-28T12:21:29+0000",
+                                    "2018-05-28T12:25:27+0000",
+                                    "2018-05-28T12:25:27+0000",
+                                    "2018-05-28T12:25:27+0000",
+                                    "2018-05-28T12:25:27+0000"),
          answer.createdAtCoordinates.latitude =
            c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
          answer.createdAtCoordinates.longitude =
@@ -193,12 +219,17 @@ myExpectedAnswersStarWarsFormMultDF <-
              userName =
                c("André Smaniotto", "André Smaniotto", "André Smaniotto",
                  "André Smaniotto"),
+             userId = c(8403, 8403, 8403, 8403),
              source = c("web_private", "web_private", "web_private",
                         "web_private"),
              createdAt = c("2018-05-28T11:27:40+0000",
                            "2018-05-28T11:42:22+0000",
                            "2018-05-28T11:43:26+0000",
                            "2018-05-28T11:44:48+0000"),
+             createdAtDevice = c("2018-05-28T11:27:40+0000",
+                                 "2018-05-28T11:42:22+0000",
+                                 "2018-05-28T11:43:26+0000",
+                                 "2018-05-28T11:44:48+0000"),
              createdAtCoordinates.latitude =
                c(-26.9075, -26.9075, -26.9075, -26.9075),
              createdAtCoordinates.longitude =
@@ -293,6 +324,9 @@ myExpectedAnswersStarWarsFormSingleDF <-
              "André Smaniotto", "André Smaniotto", "André Smaniotto",
              "André Smaniotto", "André Smaniotto", "André Smaniotto",
              "André Smaniotto", "André Smaniotto", "André Smaniotto"),
+         answer.userId =
+           c(8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403,
+             8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403, 8403),
          answer.source =
            c("web_private", "web_private", "web_private", "web_private",
              "web_private", "web_private", "web_private", "web_private",
@@ -301,6 +335,18 @@ myExpectedAnswersStarWarsFormSingleDF <-
              "web_private", "web_private", "web_private", "web_private",
              "web_private"),
          answer.createdAt =
+           c("2018-05-28T11:27:40+0000", "2018-05-28T11:27:40+0000",
+             "2018-05-28T11:27:40+0000", "2018-05-28T11:27:40+0000",
+             "2018-05-28T11:27:40+0000", "2018-05-28T11:42:22+0000",
+             "2018-05-28T11:42:22+0000", "2018-05-28T11:42:22+0000",
+             "2018-05-28T11:43:26+0000", "2018-05-28T11:43:26+0000",
+             "2018-05-28T11:43:26+0000", "2018-05-28T11:43:26+0000",
+             "2018-05-28T11:43:26+0000", "2018-05-28T11:44:48+0000",
+             "2018-05-28T11:44:48+0000", "2018-05-28T11:44:48+0000",
+             "2018-05-28T11:44:48+0000", "2018-05-28T11:44:48+0000",
+             "2018-05-28T11:44:48+0000", "2018-05-28T11:44:48+0000",
+             "2018-05-28T11:44:48+0000"),
+         answer.createdAtDevice =
            c("2018-05-28T11:27:40+0000", "2018-05-28T11:27:40+0000",
              "2018-05-28T11:27:40+0000", "2018-05-28T11:27:40+0000",
              "2018-05-28T11:27:40+0000", "2018-05-28T11:42:22+0000",
@@ -366,8 +412,12 @@ myExpectedAnswersClassicRocksFormMultDF <-
              originLocalition66431.country66432 = c("US", "US", "GB"),
              userName =
                c("André Smaniotto", "André Smaniotto", "André Smaniotto"),
+             userId = c(8403, 8403, 8403),
              source = c("web_private", "web_private", "web_private"),
              createdAt =
+               c("2018-05-28T14:49:03+0000", "2018-05-28T16:49:14+0000",
+                 "2018-05-28T17:04:53+0000"),
+             createdAtDevice =
                c("2018-05-28T14:49:03+0000", "2018-05-28T16:49:14+0000",
                  "2018-05-28T17:04:53+0000"),
              createdAtCoordinates.latitude = c(NA, NA, NA),
@@ -599,18 +649,22 @@ test_that("error by wrong idForm or nameForm", {
     "Name not found."
   )
 
-  expect_error(
-    GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg",
-                     5841,
-                     "RColetum Test - NaN"),
-    "Form not found."
+  expect_warning(
+    expect_error(
+      GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg",
+                 5841,
+                 "RColetum Test - NaN"),
+      "Form not found."
+    )
   )
 
-  expect_error(
-    GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg",
-                     5715,
-                     "RColetum Test - Iris"),
-    "Form not found."
+  expect_warning(
+    expect_error(
+      GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg",
+                 5715,
+                 "RColetum Test - Iris"),
+      "Form not found."
+    )
   )
 
   expect_error(
@@ -706,7 +760,7 @@ test_that("warming when is informed the idForm and nameForm", {
   )
 })
 
-test_that("GetAnswers in simple form", {
+test_that("get answers in simple form", {
   myFullAnswersSimpleForm <- GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg", 5705)
   expect_equal(myExpectedAnswersIrisForm, myFullAnswersSimpleForm)
 
@@ -718,48 +772,128 @@ test_that("GetAnswers in simple form", {
     dplyr::filter(myExpectedAnswersIrisForm, source == "web_private")
   expect_equal(myFilteredAnswersSource, myFilteredAnswersSource2)
 
-  myFilteredAnswersBefore <-
+  myFilteredAnswersCreatedBefore <-
     GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
                idForm = 5705,
                createdBefore = "2018-05-30")
-  myFilteredAnswersBefore2 <-
+  myFilteredAnswersCreatedBefore2 <-
     GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
                idForm = 5705,
                createdBefore = "2018-05-30T06:20:30+01:00")
-  myFilteredAnswersBefore3 <-
+  myFilteredAnswersCreatedBefore3 <-
     dplyr::filter(myExpectedAnswersIrisForm, createdAt < "2018-05-30")
-  expect_equal(myFilteredAnswersBefore, myFilteredAnswersBefore3)
-  expect_equal(myFilteredAnswersBefore2, myFilteredAnswersBefore3)
+  expect_equal(myFilteredAnswersCreatedBefore, myFilteredAnswersCreatedBefore3)
+  expect_equal(myFilteredAnswersCreatedBefore2, myFilteredAnswersCreatedBefore3)
 
-  myFilteredAnswersAfter <-
+  myFilteredAnswersCreatedAfter <-
     GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
                idForm = 5705,
                createdAfter = "2018-05-30")
-  myFilteredAnswersAfter2 <-
+  myFilteredAnswersCreatedAfter2 <-
     GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
                idForm = 5705,
                createdAfter = "2018-05-30T16:20:30+01:00")
-  expect_equal(myFilteredAnswersAfter, NULL)
-  expect_equal(myFilteredAnswersAfter2,NULL)
+  expect_equal(myFilteredAnswersCreatedAfter, NULL)
+  expect_equal(myFilteredAnswersCreatedAfter2,NULL)
 
-  myFilteredAnswersAfter3 <-
+  myFilteredAnswersCreatedAfter3 <-
     GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
                idForm = 5705,
                createdAfter = "2018-05-30T12:20:30+01:00")
-  myFilteredAnswersAfter4 <-
+  myFilteredAnswersCreatedAfter4 <-
     GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
                idForm = 5705,
                createdAfter = "2018-05-30T12:20:30Z")
-  myFilteredAnswersAfter5 <-
+  myFilteredAnswersCreatedAfter5 <-
     dplyr::mutate(
       dplyr::filter(myExpectedAnswersIrisForm, createdAt > "2018-05-29"),
       updatedAt = as.logical(updatedAt))
-  expect_equal(myFilteredAnswersAfter3, myFilteredAnswersAfter5)
-  expect_equal(myFilteredAnswersAfter4, myFilteredAnswersAfter5)
+  expect_equal(myFilteredAnswersCreatedAfter3, myFilteredAnswersCreatedAfter5)
+  expect_equal(myFilteredAnswersCreatedAfter4, myFilteredAnswersCreatedAfter5)
 
+  myFilteredAnswersCreatedDeviceBefore <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               createdDeviceBefore = "2018-05-30")
+  myFilteredAnswersCreatedDeviceBefore2 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               createdDeviceBefore = "2018-05-30T06:20:30+01:00")
+  myFilteredAnswersCreatedDeviceBefore3 <-
+    dplyr::filter(myExpectedAnswersIrisForm, createdAtDevice < "2018-05-30")
+  expect_equal(myFilteredAnswersCreatedDeviceBefore,
+               myFilteredAnswersCreatedDeviceBefore3)
+  expect_equal(myFilteredAnswersCreatedDeviceBefore2,
+               myFilteredAnswersCreatedDeviceBefore3)
+
+  myFilteredAnswersCreatedDeviceAfter <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               createdDeviceAfter = "2018-05-30")
+  myFilteredAnswersCreatedDeviceAfter2 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               createdDeviceAfter = "2018-05-30T16:20:30+01:00")
+  expect_equal(myFilteredAnswersCreatedDeviceAfter, NULL)
+  expect_equal(myFilteredAnswersCreatedDeviceAfter2,NULL)
+
+  myFilteredAnswersCreatedDeviceAfter3 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               createdDeviceAfter = "2018-05-30T12:20:30+01:00")
+  myFilteredAnswersCreatedDeviceAfter4 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               createdDeviceAfter = "2018-05-30T12:20:30Z")
+  myFilteredAnswersCreatedDeviceAfter5 <-
+    dplyr::mutate(
+      dplyr::filter(myExpectedAnswersIrisForm, createdAtDevice > "2018-05-29"),
+      updatedAt = as.logical(updatedAt))
+  expect_equal(myFilteredAnswersCreatedDeviceAfter3,
+               myFilteredAnswersCreatedDeviceAfter5)
+  expect_equal(myFilteredAnswersCreatedDeviceAfter4,
+               myFilteredAnswersCreatedDeviceAfter5)
+
+  myFilteredAnswersUpdatedBefore <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               updatedBefore = "2018-05-30")
+  myFilteredAnswersUpdatedBefore2 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               updatedBefore = "2018-05-30T06:20:30+01:00")
+  myFilteredAnswersUpdatedBefore3 <-
+    dplyr::filter(myExpectedAnswersIrisForm, updatedAt < "2018-05-30")
+  expect_equal(myFilteredAnswersUpdatedBefore, myFilteredAnswersUpdatedBefore3)
+  expect_equal(myFilteredAnswersUpdatedBefore2, myFilteredAnswersUpdatedBefore3)
+
+  myFilteredAnswersUpdatedAfter <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               updatedAfter = "2018-05-30")
+  myFilteredAnswersUpdatedAfter2 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               updatedAfter = "2018-05-30T16:20:30+01:00")
+  expect_equal(myFilteredAnswersUpdatedAfter, NULL)
+  expect_equal(myFilteredAnswersUpdatedAfter2,NULL)
+
+  myFilteredAnswersUpdatedAfter3 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               updatedAfter = "2018-05-20T12:20:30+01:00")
+  myFilteredAnswersUpdatedAfter4 <-
+    GetAnswers(token = "cizio7xeohwgc8k4g4koo008kkoocwg",
+               idForm = 5705,
+               updatedAfter = "2018-05-20T12:20:30Z")
+  myFilteredAnswersUpdatedAfter5 <-
+    dplyr::mutate(
+      dplyr::filter(myExpectedAnswersIrisForm, updatedAt > "2018-05-20"))
+  expect_equal(myFilteredAnswersUpdatedAfter3, myFilteredAnswersUpdatedAfter5)
+  expect_equal(myFilteredAnswersUpdatedAfter4, myFilteredAnswersUpdatedAfter5)
 })
 
-test_that("GetAnswers in more complex forms", {
+test_that("get answers in more complex forms", {
   myNQuestionsAnswers <- GetAnswers("cizio7xeohwgc8k4g4koo008kkoocwg", 5719)
   expect_equal(myNQuestionsAnswers,myExpectedAnswersStormFormMultDF)
 
