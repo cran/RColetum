@@ -1,5 +1,5 @@
 # RColetum
-[![Build Status](https://travis-ci.org/geo-sapiens/RColetum.svg)](https://travis-ci.org/geo-sapiens/RColetum)
+[![Actions Status](https://github.com/geo-sapiens/RColetum/workflows/R-CMD-check/badge.svg)](https://github.com/geo-sapiens/RColetum/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/RColetum)](https://cran.r-project.org/package=RColetum)
 
 An R package to get data from [Coletum](https://coletum.com).
@@ -125,7 +125,7 @@ myChart
 ```
 
 ## Versioning
-We use [SemVer](http://semver.org/) for versioning. For the versions available,
+We use [SemVer](https://semver.org/) for versioning. For the versions available,
 see the [tags on this repository](https://github.com/geo-sapiens/RColetum/tags).
 
 -----

@@ -1,3 +1,10 @@
+# RColetum 0.2.2
+
+* Replace `as.character` by `format`.
+* Reorder expected dataframes on tests.
+* Fix some lint warnings.
+* Replace `travis-ci` by `github-action`.
+
 # RColetum 0.2.1
 
 * Removed references from `countryfield` from tests.
