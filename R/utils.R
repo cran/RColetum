@@ -7,7 +7,8 @@ restGetFunction <- function(url, token, params = NULL) {
 
   resp <- httr::GET(
     url    = full_url,
-    config = httr::add_headers(Token = token),
+    config = c(httr::add_headers(Token = token),
+               httr::user_agent(buildUserAgent())),
     query  = params
   )
 
@@ -32,6 +33,12 @@ restGetFunction <- function(url, token, params = NULL) {
   }
 
   return(parsed)
+}
+
+buildUserAgent <- function() {
+  # Identifies the package and its version to the webservice, so calls made
+  # through RColetum can be told apart from other integrations.
+  paste0("RColetum/", utils::packageVersion("RColetum"))
 }
 
 fetchAllPages <- function(url, token, params, all_pages, page, page_size) {
@@ -155,6 +162,10 @@ collectEmptyFields <- function(components, parentName, isRoot = TRUE) {
   for (i in seq_len(nrow(components))) {
     cId   <- components$componentId[i]
     cType <- components$type[i]
+
+    # Separators are section breaks: they hold no answers and have no
+    # maximum, which would otherwise classify them as multivalued.
+    if (identical(cType, "separator")) next
 
     if (identical(cType, "group")) {
       maxVal <- if ("maximum" %in% names(components)) components$maximum[i] else 1L
